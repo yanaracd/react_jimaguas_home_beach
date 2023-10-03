@@ -1,0 +1,60 @@
+.Login{
+    width: 100vw;
+    min-height: 100vh;
+
+    background-color: aliceblue;
+    padding: 5rem;
+}
+.Login-div{
+    background-color: white;
+
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 0 rgb(0,0,0,.2);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.Login-left{
+    width: 50%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.Login-logo{
+    width: 20rem;
+}
+.Login-form{
+    width: 18rem;
+}
+.Login-input{
+    width: 100%;
+    
+    margin: 1rem 0;
+    padding: .5rem;
+
+    border: 1px solid aliceblue;
+    border-radius: .5rem;
+}
+.Login-submit{
+    background-color: aliceblue;
+    border-radius: .5rem;
+
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+
+    cursor: pointer;
+}
+.Login-link{
+    font-size: .875rem;
+    cursor: pointer;
+}
+.Login-right{
+    width: 50%;
+}
+.Login-img{
+    border-radius: 0 1rem 1rem 0;
+}

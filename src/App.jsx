@@ -1,36 +1,21 @@
-import { useEffect, useState } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
+import { Login } from './pages/Login'
+import { Home } from './pages/Home'
 
 function App() {
 
-  const [ usuarios , setUsuarios ] = useState([])
-
-  let { VITE_API_URL } = import.meta.env
-
-  useEffect(()=>{
-
-    let options = {
-      method : 'get'
-    }
-
-    fetch(`${VITE_API_URL}/usuarios` , options )
-    .then( res => res.json() )
-    .then( data => setUsuarios( data ))
-
-  },[])
-
   return (
-    <>
-      <h1>Usuarios</h1>
-      <ul>
-        { usuarios.length === 0 && <li>No hay usuarios</li>}
-        {
-          usuarios.length !== 0 && usuarios.map( usuario =>
-            <li key={ usuario._id }>{ usuario.user }</li>
-          )
-        }
-      </ul>
-    </>
+    <BrowserRouter>
+      <>
+
+        <Routes>
+          <Route path='/'     element={<Login />} />
+          <Route path='/home' element={<Home />} />
+        </Routes> 
+
+      </> 
+    </BrowserRouter>    
   )
 }
 

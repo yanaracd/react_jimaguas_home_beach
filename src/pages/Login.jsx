@@ -39,7 +39,7 @@ const LoginForm = () => {
             }
         }
 
-        fetch( 'http://localhost:3000/' , options )
+        fetch( VITE_API_URL , options )
         .then( res => res.json() )
         .then( data => {
             const { login } = data

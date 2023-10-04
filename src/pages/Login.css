@@ -2,7 +2,7 @@
     width: 100vw;
     min-height: 100vh;
 
-    background-color: aliceblue;
+    background-color: rgb(242, 223, 187);
     padding: 5rem;
 }
 .Login-div{
@@ -36,11 +36,13 @@
     margin: 1rem 0;
     padding: .5rem;
 
-    border: 1px solid aliceblue;
+    border: 1px solid rgb(211, 211, 211);
     border-radius: .5rem;
 }
 .Login-submit{
-    background-color: aliceblue;
+    background-color: rgb(5, 175, 242);
+    color: white;
+
     border-radius: .5rem;
 
     margin: 2rem auto;
@@ -48,8 +50,21 @@
 
     cursor: pointer;
 }
+.Login-msg{
+    margin: 0 0 1.5rem;
+    color: red;
+}
 .Login-link{
     font-size: .875rem;
+    
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: .2rem;
+}
+.Login-navlink{
+    color: rgb(5, 175, 242);
     cursor: pointer;
 }
 .Login-right{

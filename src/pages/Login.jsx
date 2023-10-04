@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import './Login.css'
 import { NavLink, useNavigate } from 'react-router-dom'
 
@@ -17,6 +17,7 @@ export const Login = () => {
 
 const LoginForm = () => {
 
+    const [ message , setMessage ] = useState(false)
     const navigate  = useNavigate()
     const userInput = useRef()
     const passInput = useRef()
@@ -42,12 +43,13 @@ const LoginForm = () => {
         fetch( VITE_API_URL , options )
         .then( res => res.json() )
         .then( data => {
-            const { login } = data
+            const { login , mensaje } = data
 
-            if( login === true ){
+            if( login ){
+                localStorage.setItem('acceso' , JSON.stringify(data))
                 navigate('/home')
             }else{
-                //Aparece un mensaje en la pantalla
+                setMessage(true)
             }
         })
 
@@ -61,9 +63,15 @@ const LoginForm = () => {
             <form className='Login-form' onSubmit={formSubmit}>
                 <input className='Login-input'  type="text"     placeholder='Usuario'    ref={userInput} />
                 <input className='Login-input'  type="password" placeholder='Contraseña' ref={passInput} />                        
-                <input className='Login-submit' type="submit"   value='Iniciar Sesión' />                        
+                <input className='Login-submit' type="submit"   value='Iniciar sesión' />                        
             </form>
-            <a className='Login-link'>¿No tiene cuenta de usuario? Regístrese</a>
+            {
+                message && <span className="Login-msg">Usuario o contraseña incorrectos</span>
+            }
+            <div className="Login-link">
+                <span className="Login-span">¿No tienes una cuenta?</span>
+                <a href="" className="Login-navlink">Regístrate</a>
+            </div>
         </div>
     )
 }

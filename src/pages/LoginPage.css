@@ -1,11 +1,17 @@
 .Login{
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
 
     background-color: rgb(242, 223, 187);
-    padding: 5rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
 }
 .Login-div{
+    width: 96%;
+
     background-color: white;
 
     border-radius: 1rem;
@@ -16,8 +22,16 @@
     justify-content: space-between;
     align-items: center;
 }
+.Login-right{
+    width: 50%;
+}
+.Login-img{
+    border-radius: 0 1rem 1rem 0;
+}
 .Login-left{
     width: 50%;
+
+    padding: 0 0 1rem;
 
     display: flex;
     flex-flow: column nowrap;
@@ -54,6 +68,10 @@
     margin: 0 0 1.5rem;
     color: red;
 }
+.Login-msj{
+    margin: 0 0 1.5rem;
+    color: rgb(86, 89, 2);
+}
 .Login-link{
     font-size: .875rem;
     
@@ -66,10 +84,4 @@
 .Login-navlink{
     color: rgb(5, 175, 242);
     cursor: pointer;
-}
-.Login-right{
-    width: 50%;
-}
-.Login-img{
-    border-radius: 0 1rem 1rem 0;
 }

@@ -110,4 +110,7 @@
     .Login{
         padding: 2rem;
     }
+    .Login-link{
+        flex-direction: column;
+    }
 }

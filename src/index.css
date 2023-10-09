@@ -9,32 +9,6 @@
     👉 Unificar la tipografía de todas las etiquetas de una web
 
 */
-/* Aquí definimos las Custom properties */
-:root {
-  --negro: #393939;
-  /* Tipografía */
-  --tipo-principal: Helvetica, Arial, sans-serif;
-  --tipo-secundaria: Verdana;
-}
-
-/* Las adaptamos al modo oscuro */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --negro: #ececec;
-  }
-}
-/* Opcional */
-/* Configuramos si un usuario ha activado el modo alto contraste. (WD) */
-/* Opcional */
-/* Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    -webkit-animation: none !important;
-            animation: none !important;
-    -webkit-transition: none !important;
-    transition: none !important;
-  }
-}
 /* Reseteamos los margin y paddings de todas las etiquetas */
 * {
   margin: 0;
@@ -98,12 +72,12 @@ blockquote:before, blockquote:after, q:before, q:after {
 
 /* Configuramos el texto que seleccionamos */
 ::-moz-selection {
-  background-color: var(--negro);
-  color: var(--blanco);
+  background-color: black;
+  color: white;
 }
 ::selection {
-  background-color: var(--negro);
-  color: var(--blanco);
+  background-color: black;
+  color: white;
 }
 
 /* Nivelamos problemas de tipografías y colocación de formularios */
@@ -135,17 +109,12 @@ svg {
   fill: currentColor;
 }
 
-/* (Probándolo, no usar en producción) En el caso de añadir una  */
-/* p svg{
-  display: inline;
-  width: initial;
-} */
 /* Configuramos la tipografía para toda la web */
 body {
   min-height: 100vh;
   font-size: 100%;
-  font-family: var(--tipo-principal);
-  color: var(--negro);
+  font-family: 'Cormorant Garamond', sans-serif;
+  color: black;
   /* opcional */
   line-height: 1.4em;
   /* opcional */

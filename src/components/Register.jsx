@@ -51,7 +51,7 @@ export const Register = () => {
                 <input className='Login-submit' type="submit"   value='Registrarse'      />                        
             </form>
             {
-                message !== undefined
+                message !== undefined && message === `El usuario ya existe`
                     ? <span className="Login-msg">{message}</span>
                     : <span className="Login-msj">{message}</span> 
             }

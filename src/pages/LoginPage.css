@@ -85,3 +85,29 @@
     color: rgb(5, 175, 242);
     cursor: pointer;
 }
+
+@media (max-width: 72rem){
+    .Login-logo, .Login-form{
+        width: 10rem;
+    }
+    .Login-submit{
+        padding: 0.5rem 1rem;
+    }    
+}
+@media (max-width: 55rem){
+    .Login-div{
+        width: auto;
+        padding: 2rem;
+    }
+    .Login-right{
+        display: none;
+    }
+    .Login-left{
+        width: 100%;
+    }
+}
+@media (max-width: 20rem){
+    .Login{
+        padding: 2rem;
+    }
+}

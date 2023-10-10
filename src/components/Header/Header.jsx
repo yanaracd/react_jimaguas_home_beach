@@ -1,18 +1,26 @@
-import { useState } from 'react'
+import { createContext, useContext, useState } from 'react'
 import './Header.css'
 import { useEffect } from 'react'
+import { NavLink } from 'react-router-dom'
+
+const MenuContext = createContext()
 
 export const Header = () => {
 
+    const [ menu , setMenu ] = useState( false )    
+
     return(
-        <header className="Header">
-            <div className="Header-wrapper">
-                <HeaderLogo   />
-                <HeaderNav    />
-                <HeaderUser   />
-                <HeaderButton />
-            </div>
-        </header>
+        <MenuContext.Provider value={{ menu , setMenu }}>
+
+            <header className="Header">
+                <div className="Header-wrapper">
+                    <HeaderLogo    />
+                    <HeaderNav     />
+                    <HeaderButton  />
+                </div>
+            </header>
+
+        </MenuContext.Provider>
     )
 }
 
@@ -29,6 +37,7 @@ const HeaderLogo = () => {
 const HeaderNav = () => {
 
     const [ enlaces , setEnlaces ] = useState([])
+    const { menu } = useContext(MenuContext)
 
     useEffect(()=>{
 
@@ -45,7 +54,7 @@ const HeaderNav = () => {
     },[])
 
     return(
-        <nav className="Header-nav">
+        <nav className={`Header-nav ${ menu ? 'isActive' : '' }`}>
             <ul className="Header-ul">
                 {
                     enlaces.map( enlace =>
@@ -55,6 +64,7 @@ const HeaderNav = () => {
                     )
                 }
             </ul>
+            <HeaderUser   />
         </nav>
     )
 }
@@ -65,7 +75,11 @@ const HeaderNavLi = ( props ) => {
 
     return(
         <li className="Header-li">
-            <a className="Header-link" href={href} title={title}>{nombre}</a>
+            {
+                nombre === 'Reservas'
+                    ? <NavLink className="Header-link" to='booking'>{nombre}</NavLink>
+                    : <a className="Header-link" href={href} title={title}>{nombre}</a>
+            }
         </li>
     )
 }
@@ -83,8 +97,15 @@ const HeaderUser = () => {
 }
 
 const HeaderButton = () => {
+
+    const { menu , setMenu } = useContext(MenuContext)
+
+    const toggleMenu = () => {
+        setMenu(!menu)
+    }
+
     return(
-        <button className="Header-button" title="Menu">
+        <button className="Header-button" title="Menu" onPointerDown={ toggleMenu }>
             <svg className="Header-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                 <path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
             </svg>

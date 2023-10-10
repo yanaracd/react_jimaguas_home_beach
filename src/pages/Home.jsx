@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+import { Header } from "../components/Header/Header"
 
 export const Home = () => {
 
@@ -22,7 +23,7 @@ export const Home = () => {
 
     return(
         <>
-            <h1>Soy la página de Jimaguas Home Beach</h1>
+            <Header />
         </>
     )
 }

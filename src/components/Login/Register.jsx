@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import '../pages/LoginPage'
+import '../../pages/LoginPage'
 import { useRef, useState } from 'react'
 
 export const Register = () => {
@@ -42,7 +42,7 @@ export const Register = () => {
 
     return(
         <div className="Login-left">
-            <img src="./assets/logo_web.png" alt="Logo Jimaguas Home Beach" className="Login-logo" />
+            <img src="assets/logo_web.png" alt="Logo Jimaguas Home Beach" className="Login-logo" />
             <form className='Login-form' onSubmit={formSubmit} >
                 <input className='Login-input'  type="text"     placeholder='Nombre'     ref={nameInput}     required />
                 <input className='Login-input'  type="text"     placeholder='Apellidos'  ref={lastNameInput} required />

@@ -1,4 +1,4 @@
-import '../pages/LoginPage'
+import '../../pages/LoginPage'
 import { useRef, useState } from "react"
 import { NavLink, useNavigate } from "react-router-dom"
 
@@ -46,7 +46,7 @@ export const Login = () => {
     
     return(
         <div className="Login-left">
-            <img src="./assets/logo_web.png" alt="Logo Jimaguas Home Beach" className="Login-logo" />
+            <img src="assets/logo_web.png" alt="Logo Jimaguas Home Beach" className="Login-logo" />
             <form className='Login-form' onSubmit={formSubmit}>
                 <input className='Login-input'  type="text"     placeholder='Usuario'    ref={userInput} required />
                 <input className='Login-input'  type="password" placeholder='Contraseña' ref={passInput} required />                        

@@ -1,0 +1,163 @@
+.Home {
+    width: 100%;
+    height: 100vh;
+
+    position: relative;
+}
+
+.Home-slider {
+    position: relative;
+}
+
+.Home-img {
+    height: 100vh;
+
+    object-fit: cover;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+.Home-static {
+    position: static;
+}
+
+.Home-img.isActive {
+    opacity: 1;
+}
+
+.Home-form {
+    background-color: white;
+    border-radius: .5rem;
+    box-shadow: 0 0 1rem 0 rgb(0,0,0,.2);
+
+    padding: 2rem;
+
+    position: absolute;
+    top: calc(50% - 10rem);
+    right: 10%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Home-h3 {
+    margin: 1rem 0 0;
+
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.Home-h3:first-child {
+    margin: 0;
+}
+
+.Home-reserva {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: center;
+    gap: 1rem;
+}
+
+.Home-fecha {
+    border: 1px solid #D9D1C7;
+    border-radius: .5rem;
+
+    padding: .5rem;
+}
+
+.Home-label {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.Home-input {
+    color: rgb(0,0,0,.6);
+}
+
+.Home-select {
+    width: 100%;
+
+    border: 1px solid #D9D1C7;
+    border-radius: .5rem;
+    padding: .5rem;
+}
+
+.Home-option {
+    font-size: initial;
+}
+
+.Home-send {
+    background-color: #D9D1C7;
+
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    border: 1px solid transparent;
+
+    cursor: pointer;
+    transition: background-color .5s ease, border .5s ease, transform .5s ease;
+}
+
+.Home-send:hover {
+    background-color: transparent;
+    border: 1px solid #D9D1C7;
+
+    transform: scale(1.05);
+}
+
+.Home-send:active {
+    transform: scale(0.95);
+}
+
+.Home-ul {
+    position: absolute;
+    bottom: 3%;
+    left: calc(50% - 10.5rem);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Home-li {
+    padding: .2rem;
+    border: 1px solid black;
+    border-radius: 50%;
+
+    transition: color .5s ease, border .5s ease, transform .5s ease;
+}
+
+.Home-li:hover {
+    color: #D9D1C7;
+    border: 1px solid #D9D1C7;
+
+    transform: scale(1.05);
+}
+
+.Home-li:active {
+    transform: scale(0.95);
+}
+
+.Home-li.isActive {
+    color: #D9D1C7;
+    border: 1px solid #D9D1C7;
+}
+
+.Home-button {
+    cursor: pointer;
+}
+
+.Home-svg {
+    width: .7rem;
+    height: .7rem;
+}

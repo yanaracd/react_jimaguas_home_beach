@@ -89,7 +89,7 @@ const Form = () => {
             }
         }
 
-        fetch( `http://localhost:3000/reservas` , options )
+        fetch( `${VITE_API_URL}/reservas` , options )
         .then( res => res.json() )
         .then( data => navigate('/home/booking') )
 

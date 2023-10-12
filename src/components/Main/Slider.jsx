@@ -63,6 +63,7 @@ const ImagenList = ( props ) => {
 
 const Form = () => {
 
+    const [ message , setMessage ] = useState()
     const navigate      = useNavigate()
     const entradaInput  = useRef()
     const salidaInput   = useRef()
@@ -91,7 +92,10 @@ const Form = () => {
 
         fetch( `${VITE_API_URL}/reservas` , options )
         .then( res => res.json() )
-        .then( data => navigate('/home/booking') )
+        .then( data => {
+            setMessage(data)
+            navigate('/home/booking')            
+        })
 
         entradaInput.current.value  = ''
         salidaInput.current.value   = ''

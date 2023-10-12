@@ -33,7 +33,7 @@
 .Home-form {
     background-color: white;
     border-radius: .5rem;
-    box-shadow: 0 0 1rem 0 rgb(0,0,0,.2);
+    box-shadow: 0 0 1rem 0 rgb(0, 0, 0, .2);
 
     padding: 2rem;
 
@@ -80,7 +80,7 @@
 }
 
 .Home-input {
-    color: rgb(0,0,0,.6);
+    color: rgb(0, 0, 0, .6);
 }
 
 .Home-select {
@@ -160,4 +160,24 @@
 .Home-svg {
     width: .7rem;
     height: .7rem;
+}
+
+@media (max-width: 30rem) {
+    .Home-form {
+        top: 15%;
+        left: 10%;
+    }
+}
+
+@media (max-width: 21.875rem) {
+
+    .Home-h3,
+    .Home-label {
+        font-size: .75rem;
+    }
+
+    .Home-svg {
+        width: .4rem;
+        height: .4rem;
+    }
 }

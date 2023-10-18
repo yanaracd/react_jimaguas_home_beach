@@ -1,0 +1,144 @@
+.Acordeon {
+    width: 100%;
+    /* height: 0; */
+    height: 100%;
+
+    overflow: hidden;
+
+    transition: height .5s ease;
+}
+
+.Acordeon.isActive {
+    height: 100%;
+}
+
+.Acordeon-wrapper {
+    width: 90%;
+
+    padding: 2rem 0 0;
+    margin: auto;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.Acordeon-h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+.Acordeon-p {
+    text-align: justify;
+}
+
+.Acordeon-div {
+    margin: auto;
+}
+
+.Acordeon-img {
+    width: auto;
+    max-height: 30rem;
+
+    margin: 0 auto 1rem;
+    padding: .5rem;
+
+    border: 1px solid #D9D1C7;
+}
+
+.Acordeon-slider {
+    width: 100%;
+
+    position: relative;
+}
+
+.Acordeon-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: .5rem;
+}
+
+.Acordeon-grid--disabled {
+    width: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+
+.Acordeon-grid--disabled.isActive {
+    pointer-events: initial;
+
+    opacity: 1;
+}
+
+.Acordeon-image {
+    height: 14rem;
+
+    object-fit: cover;
+
+    cursor: pointer;
+    transition: transform .5s ease;
+}
+
+.Acordeon-image:hover {
+    transform: scale(1.05);
+}
+
+.Acordeon-image:active {
+    transform: scale(0.95);
+}
+
+.Acordeon-button {
+    background-color: transparent;
+    border-radius: 50%;
+
+    padding: .5rem;
+
+    position: absolute;
+    top: calc(50% - 1rem);
+
+    cursor: pointer;
+    transition: background-color .5s ease, transform .5s ease;
+}
+
+.Acordeon-button:hover {
+    background-color: #D9D1C7;
+    transform: scale(1.05);
+}
+
+.Acordeon-button:active {
+    transform: scale(0.95);
+}
+
+.Acordeon-button--next {
+    right: -5%;
+}
+
+.Acordeon-button--prev {
+    left: -5%;
+}
+
+.Acordeon-svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+@media (max-width: 56.25rem) {
+    .Acordeon-image {
+        height: 10rem;
+    }
+}
+
+@media (max-width: 30rem) {
+    .Acordeon-image {
+        height: 5rem;
+    }
+}

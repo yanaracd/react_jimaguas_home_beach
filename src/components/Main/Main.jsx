@@ -1,17 +1,19 @@
-import { createContext, useState } from "react"
+import { createContext, useContext, useState } from "react"
 import { Lightbox } from "../Lightbox/Lightbox"
 import { Room } from "./Room"
 import { Slider } from "./Slider"
 import { Accordion } from "../Accordion/Accordion"
 
-export const LightboxContext = createContext()
+export const ActiveContext = createContext()
 
 export const Main = () => {
 
-    const [ lightbox , setLightbox ] = useState(false)
+    const [ lightbox  , setLightbox  ] = useState(false)
+    const [ accordion , setAccordion ] = useState(false)
+    const [ grid      , setGrid      ] = useState(false)
 
     return(
-        <LightboxContext.Provider value={{ lightbox , setLightbox }}>
+        <ActiveContext.Provider value={{ lightbox , setLightbox , accordion , setAccordion , grid , setGrid }}>
 
             <main className="Main">
                 <Slider />
@@ -20,6 +22,6 @@ export const Main = () => {
                 <Accordion />
             </main>  
 
-        </LightboxContext.Provider>    
+        </ActiveContext.Provider>    
     )
 }

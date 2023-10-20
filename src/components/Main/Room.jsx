@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import './Room.css'
-import { LightboxContext } from './Main'
+import { ActiveContext } from './Main'
 
 export const Room = () => {
     return (
@@ -31,7 +31,7 @@ const Information = () => {
 
 const RoomsSection = () => {
 
-    const { setLightbox } = useContext(LightboxContext)
+    const { setLightbox } = useContext(ActiveContext)
 
     const addLightbox = () => {
         setLightbox(true)
@@ -52,16 +52,27 @@ const RoomsSection = () => {
 }
 
 const ButtonAcordion = () => {
+
+    const { accordion , setAccordion } = useContext(ActiveContext)
+
+    const addAccordion = () => {
+        setAccordion(true)
+    }
+
+    const removeAccordion = () => {
+        setAccordion(false)
+    }
+
     return(
         <div className="Room-buttons">
-            <button className="Room-button" title="Ver mas">
+            <button className="Room-button" title="Ver mas" onPointerDown={ addAccordion }>
                 <span className="Room-span">Ver más</span>
                 <svg className="Room-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                     <path d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                     <path d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                 </svg>
             </button>
-            <button className="Room-button Room-button--disabled" title="Ver menos">
+            <button className={`Room-button Room-button--disabled ${ accordion ? 'isActive' : '' }`} title="Ver menos" onPointerDown={ removeAccordion }>
                 <span className="Room-span">Ver menos</span>
                 <svg className="Room-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                     <path d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z" />

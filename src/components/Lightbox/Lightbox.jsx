@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from 'react'
 import './Lightbox.css'
-import { LightboxContext } from '../Main/Main'
+import { ActiveContext } from '../Main/Main'
 
 export const Lightbox = () => {
 
-    const { lightbox } = useContext(LightboxContext)
+    const { lightbox } = useContext(ActiveContext)
 
     return(
         <div className={`Main-div Lightbox ${ lightbox ? 'isActive' : '' }`}>
@@ -18,7 +18,7 @@ export const Lightbox = () => {
 
 const ButtonLightbox = () => {
 
-    const { setLightbox } = useContext(LightboxContext)
+    const { setLightbox } = useContext(ActiveContext)
 
     const removeLightbox = () => {
         setLightbox(false)

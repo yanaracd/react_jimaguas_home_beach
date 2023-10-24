@@ -1,0 +1,119 @@
+.Footer {
+    width: 100%;
+    background-color: #D9D1C7;
+    margin: 2rem 0 0;
+}
+
+.Footer-wrapper {
+    width: 90%;
+
+    padding: 2rem;
+    margin: auto;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.Footer-li {
+    margin: 0 0 .5rem;
+
+    transition: transform .5s ease;
+}
+
+.Footer-li:hover {
+    transform: scale(1.05);
+}
+
+.Footer-li:active {
+    transform: scale(0.95);
+}
+
+.Footer-li:last-child {
+    margin: 0;
+}
+
+.Footer-link {
+    text-transform: uppercase;
+}
+
+.Footer-right {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4rem;
+}
+
+.Footer-form {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.Footer-input {
+    border: 1px solid white;
+    padding: 1rem 1rem;
+}
+
+.Footer-button {
+    background-color: white;
+    border-radius: .5rem;
+
+    padding: 1rem 2rem;
+
+    cursor: pointer;
+
+    transition: transform .5s ease;
+}
+
+.Footer-button:hover {
+    transform: scale(1.05);
+}
+
+.Footer-button:active {
+    transform: scale(0.95);
+}
+
+.Footer-ul--rrss {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.Footer-svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+
+/* Responsive para dispositivos con ancho < 900px */
+@media (max-width: 56.25rem) {
+    .Footer-wrapper {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+/* Responsive para dispositivos con ancho < 480px */
+@media (max-width: 30rem) {
+    .Footer-form {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+/* Responsive para dispositivos con ancho < 350px */
+@media (max-width: 21.875rem) {
+    .Footer-wrapper {
+        padding: 1rem;
+    }
+}

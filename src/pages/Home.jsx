@@ -1,31 +1,38 @@
-import { useEffect } from "react"
+import { createContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { Header } from "../components/Header/Header"
 import { Main } from "../components/Main/Main"
+import { Footer } from "../components/Footer/Footer"
+
+export const NavContext = createContext()
 
 export const Home = () => {
 
+    const [enlaces, setEnlaces] = useState([])
     const navigate = useNavigate()
 
-    useEffect(()=>{
+    useEffect(() => {
 
         const cookie = localStorage.getItem('acceso')
 
-        if( cookie !== null ){
+        if (cookie !== null) {
             const { login } = JSON.parse(cookie)
-            if(!login){
+            if (!login) {
                 navigate('/')
             }
-        }else{
+        } else {
             navigate('/')
-        }        
-        
-    },[])
+        }
 
-    return(
-        <>
+    }, [])
+
+    return (
+        <NavContext.Provider value={{ enlaces, setEnlaces }}>
+
             <Header />
             <Main />
-        </>
+            <Footer />
+
+        </NavContext.Provider>
     )
 }

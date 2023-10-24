@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from 'react'
+import { NavContext } from '../../pages/Home'
 import './Header.css'
 import { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
@@ -36,7 +37,7 @@ const HeaderLogo = () => {
 
 const HeaderNav = () => {
 
-    const [ enlaces , setEnlaces ] = useState([])
+    const { enlaces , setEnlaces } = useContext(NavContext)
     const { menu } = useContext(MenuContext)
 
     useEffect(()=>{

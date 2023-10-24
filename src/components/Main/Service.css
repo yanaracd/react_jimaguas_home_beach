@@ -1,0 +1,93 @@
+.Service {
+    width: 100%;
+}
+
+.Service-h2 {
+    margin: 2rem 0 0;
+    padding: 2rem 0;
+
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.Service-wrapper {
+    width: 90%;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.Service-article--cleaning {
+    grid-column: span 2;
+}
+
+.Service-article--laundry {
+    grid-column: span 2;
+}
+
+.Service-div {
+    position: relative;
+}
+
+.Service-img {
+    height: 37.5rem;
+    object-fit: cover;
+
+    transition: opacity .5s ease;
+}
+
+.Service-div:hover .Service-img {
+    opacity: 0.8;
+}
+
+.Service-button {
+    opacity: 0;
+
+    margin: auto;
+    padding: 1rem 2rem;
+
+    background-color: white;
+    border-radius: .5rem;
+
+    position: absolute;
+    bottom: calc((100% / 2) - 2.25rem);
+    right: calc((100% / 2) - 4.5rem);
+
+    cursor: pointer;
+    transition: opacity .5s ease, color .5s ease, background-color .5s ease, transform .5s ease;
+}
+
+.Service-div:hover .Service-button {
+    opacity: 1;
+}
+
+.Service-button:hover {
+    color: white;
+    background-color: #D9D1C7;
+
+    transform: scale(1.05);
+}
+
+.Service-button:active {
+    transform: scale(0.95);
+}
+
+.Service-h3 {
+    margin: 1rem 0 0;
+
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@media (max-width: 56.25rem) {
+    .Service-wrapper {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}

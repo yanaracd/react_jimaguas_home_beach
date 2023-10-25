@@ -31,10 +31,11 @@ const Information = () => {
 
 const RoomsSection = () => {
 
-    const { setLightbox } = useContext(ActiveContext)
+    const { setLightbox , setCondition  } = useContext(ActiveContext)
 
     const addLightbox = () => {
         setLightbox(true)
+        setCondition('habitaciones')
     }
 
     return(

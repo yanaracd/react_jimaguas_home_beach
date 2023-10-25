@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import './Service.css'
+import { ActiveContext } from './Main'
 
 export const Service = () => {
 
@@ -39,11 +40,18 @@ const ArticleService = ( props ) => {
 
     const { className , img , button , h3 } = props
 
+    const { setLightbox , setCondition } = useContext(ActiveContext)
+
+    const addLightbox = () => {
+        setLightbox(true)
+        setCondition('servicios')
+    }
+
     return (
         <article className={`Service-article ${className}`}>
             <div className="Service-div">
                 <img loading="lazy" src={img.src} alt={img.alt} className="Service-img" />
-                <button className="Service-button" title="Saber mas">{button}</button>
+                <button onPointerDown={ addLightbox } className="Service-button" title="Saber mas">{button}</button>
             </div>
             <h3 className="Service-h3">{h3}</h3>
         </article>

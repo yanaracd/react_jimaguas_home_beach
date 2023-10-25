@@ -12,11 +12,12 @@ export const ActiveContext = createContext()
 export const Main = () => {
 
     const [ lightbox  , setLightbox  ] = useState(false)
+    const [ condition , setCondition ] = useState()
     const [ accordion , setAccordion ] = useState(false)
     const [ grid      , setGrid      ] = useState(false)
 
     return(
-        <ActiveContext.Provider value={{ lightbox , setLightbox , accordion , setAccordion , grid , setGrid }}>
+        <ActiveContext.Provider value={{ lightbox , setLightbox , condition , setCondition , accordion , setAccordion , grid , setGrid }}>
 
             <main className="Main">
                 <Slider />

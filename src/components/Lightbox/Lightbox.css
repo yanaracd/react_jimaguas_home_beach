@@ -112,3 +112,66 @@
 .Lightbox-img {
     width: 2rem;
 }
+
+.Modal-section {
+    width: 100%;
+
+    padding: 2rem;
+
+    /* display: none; */
+}
+
+/* .Modal-section.isActive {
+    display: block;
+} */
+
+.Modal-h3 {
+    font-family: var(--title-font);
+    font-size: 1.5rem;
+}
+
+.Modal-article {
+    margin: 1rem 0 0;
+    border-bottom: 1px solid var(--color-lightgray);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: .5rem;
+}
+
+.Modal-article:last-child {
+    border-bottom: 0;
+}
+
+.Modal-h4 {
+    font-weight: bold;
+}
+
+.Modal-p {
+    margin: 0 0 1rem;
+
+    text-align: justify;
+}
+
+.Modal-ul {
+    margin: 0 0 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: .5rem;
+}
+
+.Modal-li {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Modal-img {
+    width: 2rem;
+}

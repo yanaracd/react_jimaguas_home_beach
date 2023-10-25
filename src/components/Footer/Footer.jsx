@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import './Footer.css'
 import { NavContext } from '../../pages/Home'
+import { NavLink } from 'react-router-dom'
 
 export const Footer = () => {
 
@@ -33,13 +34,17 @@ const LeftFooter = () => {
     )
 }
 
-const LiFooter = (props) => {
+const LiFooter = ( props ) => {
 
     const { href, title, nombre } = props
 
     return (
         <li className="Footer-li">
-            <a className="Footer-link" href={href} title={title}>{nombre}</a>
+            {
+                nombre === 'Reservas'
+                    ? <NavLink className="Footer-link" to='booking'>{nombre}</NavLink>
+                    : <a className="Footer-link" href={href} title={title}>{nombre}</a>
+            }
         </li>
     )
 }

@@ -1,0 +1,11 @@
+.Manager{}
+.Manager-wrapper{
+    padding: 0 1rem;
+}
+.Manager-h2{
+    margin: 2rem 0 0;
+    padding: 2rem 0;
+
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2rem;
+}

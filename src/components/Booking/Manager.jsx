@@ -157,8 +157,12 @@ const TableUpdate = () => {
         setUpdate(false)
     }
 
+    const cancelarModificacion = () => {
+        setUpdate(false)
+    }
+
     return (
-        <tr className={`Manager-update ${update ? 'isActive' : ''}`}>
+        <tr className={`Manager-update ${update ? 'isActive' : ''} table-secondary`}>
             <th scope="row">
                 <input type="hidden" ref={idInput} />
             </th>
@@ -184,7 +188,7 @@ const TableUpdate = () => {
                 </select>
             </td>
             <td><button onPointerDown={updateBooking} type="button" className="btn btn-primary">Modificar</button></td>
-            <td></td>
+            <td><button onPointerDown={cancelarModificacion} type="button" className="btn btn-danger">Cancelar</button></td>
         </tr>
     )
 }

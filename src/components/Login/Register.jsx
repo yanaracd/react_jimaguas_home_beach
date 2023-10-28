@@ -48,7 +48,7 @@ export const Register = () => {
                 <input className='Login-input'  type="text"     placeholder='Apellidos'  ref={lastNameInput} required />
                 <input className='Login-input'  type="text"     placeholder='Usuario'    ref={userInput}     required />
                 <input className='Login-input'  type="password" placeholder='Contraseña' ref={passInput}     required />                        
-                <input className='Login-submit' type="submit"   value='Registrarse'      />                        
+                <input className='Login-submit Login-submit--register' type="submit"   value='Registrarse'      />                        
             </form>
             {
                 message !== undefined && message === `El usuario ya existe`

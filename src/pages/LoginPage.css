@@ -64,6 +64,9 @@
 
     cursor: pointer;
 }
+.Login-submit--register{
+    margin: .5rem auto;
+}
 .Login-msg{
     margin: 0 0 1.5rem;
     color: red;

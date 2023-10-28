@@ -126,13 +126,13 @@
 } */
 
 .Modal-h3 {
-    font-family: var(--title-font);
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 1.5rem;
 }
 
 .Modal-article {
     margin: 1rem 0 0;
-    border-bottom: 1px solid var(--color-lightgray);
+    border-bottom: 1px solid lightgray;
 
     display: flex;
     flex-flow: column nowrap;

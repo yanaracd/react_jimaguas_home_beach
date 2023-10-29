@@ -11,6 +11,7 @@ export const Home = () => {
     useEffect(() => {
 
         const cookie = localStorage.getItem('acceso')
+        console.log(cookie)
 
         if (cookie !== null) {
             const { login } = JSON.parse(cookie)

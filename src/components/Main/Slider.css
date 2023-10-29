@@ -163,24 +163,6 @@
         top: 15%;
         left: 10%;
     }
-
-    .Home-reserva{
-        width: 100%;
-        background-color: red;
-
-        flex-direction: column;
-    }
-
-    .Home-fecha{
-        width: 100%;
-        background-color: lime;
-    }
-
-    .Home-input{
-        width: 100%;
-        min-height: 5rem;
-        background-color: orange
-    }
 }
 
 @media (max-width: 21.875rem) {

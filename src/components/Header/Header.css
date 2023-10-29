@@ -22,14 +22,8 @@
 
 .Header-h1 {
     width: 10rem;
-}
 
-.Header-nav {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 2rem;
+    padding: 1rem 0;
 }
 
 .Header-ul {
@@ -45,19 +39,18 @@
     text-transform: uppercase;
     font-size: 1rem;
 
-    border-bottom: 2px solid transparent;
-    transition: border-bottom .5s ease, transform .5s ease;
+    transition: transform .5s ease; 
 }
 
 .Header-link:hover {
-    border-bottom: 2px solid rgb(217, 209, 199);
+    color: rgb(217, 209, 199);
 }
 
 .Header-link:active {
     transform: scale(0.95);
 }
 
-.Header-user {
+/* .Header-user {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -76,7 +69,7 @@
     font-family: 'Josefin Sans', sans-serif;
     text-transform: uppercase;
     font-size: 1rem;
-}
+} */
 
 .Header-button {
     display: none;
@@ -109,7 +102,7 @@
     }
 
     .Header-nav.isActive {
-        height: 70vh;
+        height: 60vh;
         opacity: 1;
     }
 

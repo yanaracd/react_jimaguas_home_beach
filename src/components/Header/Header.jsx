@@ -30,8 +30,8 @@ const HeaderLogo = () => {
 
     return (
         <h1 className="Header-h1">
-            {/* <a className="Header-a" href={`${VITE_WEB_URL}/home#Inicio`} title="Inicio"> */}
-            <a className="Header-a" href={`http://localhost:5173/home#Inicio`} title="Inicio">
+            <a className="Header-a" href={`${VITE_WEB_URL}/home#Inicio`} title="Inicio">
+            {/* <a className="Header-a" href={`http://localhost:5173/home#Inicio`} title="Inicio"> */}
                 <img className="Header-img" src="assets/logo_web.png" alt="Logo Jimaguas Home Beach" />
             </a>
         </h1>
@@ -79,8 +79,8 @@ const HeaderNavLi = (props) => {
 
     return (
         <li className="Header-li">
-            {/* <a className="Header-link" href={`${VITE_WEB_URL}/home${href}`} title={title}>{nombre}</a> */}
-            <a className="Header-link" href={`http://localhost:5173/home${href}`} title={title}>{nombre}</a>
+            <a className="Header-link" href={`${VITE_WEB_URL}/home${href}`} title={title}>{nombre}</a>
+            {/* <a className="Header-link" href={`http://localhost:5173/home${href}`} title={title}>{nombre}</a> */}
         </li>
     )
 }

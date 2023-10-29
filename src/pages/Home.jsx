@@ -6,22 +6,22 @@ import { Footer } from "../components/Footer/Footer"
 
 export const Home = () => {
 
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        const cookie = localStorage.getItem('acceso')
+    //     const cookie = localStorage.getItem('acceso')
 
-        if (cookie !== null) {
-            const { login } = JSON.parse(cookie)
-            if (!login) {
-                navigate('/')
-            }
-        } else {
-            navigate('/')
-        }
+    //     if (cookie !== null) {
+    //         const { login } = JSON.parse(cookie)
+    //         if (!login) {
+    //             navigate('/')
+    //         }
+    //     } else {
+    //         navigate('/')
+    //     }
 
-    }, [])
+    // }, [])
 
     return (
         <>

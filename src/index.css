@@ -91,9 +91,6 @@ form, input, textarea, select, button, label {
   color: inherit;
   display: block;
   /* opcional */
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
 }
 
 /* Reseteamos las tablas */

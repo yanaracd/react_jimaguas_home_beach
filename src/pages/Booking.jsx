@@ -5,7 +5,7 @@ export const Booking = () => {
     
     return(
         <>
-            {/* <Header /> */}
+            <Header />
             <Manager />
         </>
     )

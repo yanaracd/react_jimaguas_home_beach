@@ -1,14 +1,11 @@
-import { createContext, useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { Header } from "../components/Header/Header"
 import { Main } from "../components/Main/Main"
 import { Footer } from "../components/Footer/Footer"
 
-export const NavContext = createContext()
-
 export const Home = () => {
 
-    const [enlaces, setEnlaces] = useState([])
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -27,12 +24,12 @@ export const Home = () => {
     }, [])
 
     return (
-        <NavContext.Provider value={{ enlaces, setEnlaces }}>
+        <>
 
             <Header />
             <Main />
             <Footer />
 
-        </NavContext.Provider>
+        </>
     )
 }

@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import './Footer.css'
-import { NavContext } from '../../pages/Home'
 import { NavLink } from 'react-router-dom'
+import { AppContext } from '../../App'
 
 export const Footer = () => {
 
@@ -17,7 +17,7 @@ export const Footer = () => {
 
 const LeftFooter = () => {
 
-    const { enlaces } = useContext(NavContext)
+    const { enlaces } = useContext(AppContext)
 
     return (
         <div className="Footer-left">

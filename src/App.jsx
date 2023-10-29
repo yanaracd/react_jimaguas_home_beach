@@ -3,12 +3,17 @@ import './App.css'
 import { LoginPage } from './pages/LoginPage'
 import { Home } from './pages/Home'
 import { Booking } from './pages/Booking'
+import { createContext, useState } from 'react'
+
+export const AppContext = createContext() 
 
 function App() {
 
+  const [enlaces, setEnlaces] = useState([])
+
   return (
     <BrowserRouter>
-      <>
+      <AppContext.Provider value={{ enlaces, setEnlaces }}>
 
         <Routes>
           <Route path='/'             element={<LoginPage />} />
@@ -17,7 +22,7 @@ function App() {
           <Route path='/home/booking' element={<Booking   />} />
         </Routes> 
 
-      </> 
+      </AppContext.Provider> 
     </BrowserRouter>    
   )
 }

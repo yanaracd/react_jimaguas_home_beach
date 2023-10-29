@@ -1,57 +1,65 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 export const Form = () => {
 
-    const [ message , setMessage ] = useState()
-    const navigate      = useNavigate()
-    const entradaInput  = useRef()
-    const salidaInput   = useRef()
+    const [message, setMessage] = useState()
+    const [formattedDate, setFormattedDate] = useState()
+    const navigate = useNavigate()
+    const entradaInput = useRef()
+    const salidaInput = useRef()
     const cantidadInput = useRef()
-    const habInput      = useRef()
+    const habInput = useRef()
 
-    const formSubmit = ( e ) => {
+    useEffect(() => {
+
+        const today = new Date();
+        setFormattedDate(`${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`)
+
+    }, [])
+
+    const formSubmit = (e) => {
         e.preventDefault()
 
-        const { value : entrada  } = entradaInput.current
-        const { value : salida   } = salidaInput.current
-        const { value : cantidad } = cantidadInput.current
-        const { value : hab      } = habInput.current
+        const { value: entrada } = entradaInput.current
+        const { value: salida } = salidaInput.current
+        const { value: cantidad } = cantidadInput.current
+        const { value: hab } = habInput.current
 
-        const reserva = { entrada, salida, cantidad , hab }
+        const reserva = { entrada, salida, cantidad, hab }
 
         let { VITE_API_URL } = import.meta.env || 'http://localhost:3000'
-        
+
         let options = {
-            method  : 'post',
-            body    : JSON.stringify(reserva),
-            headers : {
-                "Content-type" : "application/json"
+            method: 'post',
+            body: JSON.stringify(reserva),
+            headers: {
+                "Content-type": "application/json"
             }
         }
 
-        fetch( `${VITE_API_URL}/reservas` , options )
-        .then( res => res.json() )
-        .then( data => {
-            setMessage(data)
-            navigate('/home/booking')            
-        })
+        fetch(`${VITE_API_URL}/reservas`, options)
+            .then(res => res.json())
+            .then(data => {
+                setMessage(data)
+                navigate('/home/booking')
+            })
 
-        entradaInput.current.value  = ''
-        salidaInput.current.value   = ''
+        entradaInput.current.value = ''
+        salidaInput.current.value = ''
     }
 
-    return(
+    return (
         <form onSubmit={formSubmit} className="Home-form" action="/send/" method="post">
             <h3 className="Home-h3">Selecione la fecha de su reserva</h3>
             <ul className="Home-reserva">
                 <li className="Home-fecha">
                     <label className="Home-label">Llegada</label>
-                    <input className="Home-input" id="llegada" type="date" min="2023-01-01" required ref={entradaInput} />
+                    <input className="Home-input" id="llegada" type="date" min={formattedDate} required ref={entradaInput} />
                 </li>
                 <li className="Home-fecha">
                     <label className="Home-label">Salida</label>
-                    <input className="Home-input" id="salida" type="date" min="2023-01-01" required ref={salidaInput} />
+                    <input className="Home-input" id="salida" type="date" min={formattedDate} required ref={salidaInput} />
                 </li>
             </ul>
             <h3 className="Home-h3">Selecione la cantidad de huéspedes</h3>

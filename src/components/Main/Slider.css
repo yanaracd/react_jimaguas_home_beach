@@ -79,10 +79,6 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
-.Home-input {
-    color: rgb(0, 0, 0, .6);
-}
-
 .Home-select {
     width: 100%;
 
@@ -117,7 +113,7 @@
     transform: scale(0.95);
 }
 
-.Home-ul {
+/* .Home-ul {
     position: absolute;
     bottom: 3%;
     left: calc(50% - 10.5rem);
@@ -160,7 +156,7 @@
 .Home-svg {
     width: .7rem;
     height: .7rem;
-}
+} */
 
 @media (max-width: 30rem) {
     .Home-form {
@@ -176,8 +172,8 @@
         font-size: .75rem;
     }
 
-    .Home-svg {
+    /* .Home-svg {
         width: .4rem;
         height: .4rem;
-    }
+    } */
 }

@@ -1,31 +1,43 @@
-import { useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useState } from 'react'
 import './Accordion.css'
 import { ActiveContext } from '../Main/Main'
 
+const ImagenContext = createContext()
+
 export const Accordion = () => {
 
+    let [imagenAumentada, setImagenAumentada] = useState({
+        src: "assets/propiedad/exterior2.jpg",
+        alt: "Imagen aumentada"
+    })
     const { accordion } = useContext(ActiveContext)
 
-    return(
-        <div className={`Main-div Acordeon ${ accordion ? 'isActive' : '' }`}>
-            <div className="Acordeon-wrapper">
-                <DescriptionAccordion />
-                <div className="Acordeon-div">
-                    <ImageZoomAccordion />
-                    <div className="Acordeon-slider">
-                        <GridAccordion />
-                        <GridDisabledAccordion />
-                        <ButtonAccordionNext />
-                        <ButtonAccordionPrev />                        
+    const changeImage = (src, alt) => {
+        setImagenAumentada({ src, alt })
+    }
+
+    return (
+        <ImagenContext.Provider value={{ imagenAumentada, setImagenAumentada, changeImage }}>
+            <div className={`Main-div Acordeon ${accordion ? 'isActive' : ''}`}>
+                <div className="Acordeon-wrapper">
+                    <DescriptionAccordion />
+                    <div className="Acordeon-div">
+                        <ImageZoomAccordion />
+                        <div className="Acordeon-slider">
+                            <GridAccordion />
+                            <GridDisabledAccordion />
+                            <ButtonAccordionNext />
+                            <ButtonAccordionPrev />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </ImagenContext.Provider>
     )
 }
 
 const DescriptionAccordion = () => {
-    return(
+    return (
         <>
             <h3 className="Acordeon-h3">Descripción de la propiedad</h3>
             <p className="Acordeon-p">Jimaguas Home Beach se encuentra situada en la Península de Varadero, en uno de
@@ -46,35 +58,39 @@ const DescriptionAccordion = () => {
 }
 
 const ImageZoomAccordion = () => {
-    return(
-        <img loading="lazy" src="assets/propiedad/exterior2.jpg" alt="Imagen aumentada"
+
+    const { imagenAumentada } = useContext(ImagenContext)
+
+    return (
+        <img loading="lazy" src={imagenAumentada.src} alt={imagenAumentada.alt}
             className="Acordeon-img" />
     )
 }
 
 const GridAccordion = () => {
 
-    const [ imagenesGrid , setImagenesGrid ] = useState([])
+    const [imagenesGrid, setImagenesGrid] = useState([])
+    const { changeImage } = useContext(ImagenContext)
 
-    useEffect(()=>{
+    useEffect(() => {
 
         let { VITE_API_URL } = import.meta.env || 'http://localhost:3000'
-        
+
         let options = {
-            method  : 'get'
+            method: 'get'
         }
 
-        fetch( `${VITE_API_URL}/imagenesGrid` , options )
-        .then( res => res.json() )
-        .then( data => setImagenesGrid(data) )
+        fetch(`${VITE_API_URL}/imagenesGrid`, options)
+            .then(res => res.json())
+            .then(data => setImagenesGrid(data))
 
-    },[])
+    }, [])
 
-    return(
+    return (
         <div className="Acordeon-grid">
             {
-                imagenesGrid.map( imagen =>
-                    <img key={imagen._id} loading="lazy" src={imagen.src} alt={imagen.alt} className="Acordeon-image" />
+                imagenesGrid.map(imagen =>
+                    <img onPointerDown={() => changeImage(imagen.src, imagen.alt)} key={imagen._id} loading="lazy" src={imagen.src} alt={imagen.alt} className="Acordeon-image" />
                 )
             }
         </div>
@@ -84,27 +100,28 @@ const GridAccordion = () => {
 const GridDisabledAccordion = () => {
 
     const { grid } = useContext(ActiveContext)
-    const [ imagenesGridDisabled , setImagenesGridDisabled ] = useState([])
+    const { changeImage } = useContext(ImagenContext)
+    const [imagenesGridDisabled, setImagenesGridDisabled] = useState([])
 
-    useEffect(()=>{
+    useEffect(() => {
 
         let { VITE_API_URL } = import.meta.env || 'http://localhost:3000'
-        
+
         let options = {
-            method  : 'get'
+            method: 'get'
         }
 
-        fetch( `${VITE_API_URL}/imagenesGridDisabled` , options )
-        .then( res => res.json() )
-        .then( data => setImagenesGridDisabled(data) )
+        fetch(`${VITE_API_URL}/imagenesGridDisabled`, options)
+            .then(res => res.json())
+            .then(data => setImagenesGridDisabled(data))
 
-    },[])
+    }, [])
 
-    return(
-        <div className={`Acordeon-grid Acordeon-grid--disabled ${ grid ? 'isActive' : '' }`}>
+    return (
+        <div className={`Acordeon-grid Acordeon-grid--disabled ${grid ? 'isActive' : ''}`}>
             {
-                imagenesGridDisabled.map( imagen =>
-                    <img key={imagen._id} loading="lazy" src={imagen.src} alt={imagen.alt} className="Acordeon-image" />
+                imagenesGridDisabled.map(imagen =>
+                    <img onPointerDown={() => changeImage(imagen.src, imagen.alt)} key={imagen._id} loading="lazy" src={imagen.src} alt={imagen.alt} className="Acordeon-image" />
                 )
             }
         </div>
@@ -113,14 +130,14 @@ const GridDisabledAccordion = () => {
 
 const ButtonAccordionNext = () => {
 
-    const { grid , setGrid } = useContext(ActiveContext)
+    const { grid, setGrid } = useContext(ActiveContext)
 
     const toggleGrid = () => {
         setGrid(!grid)
     }
 
-    return(
-        <button className="Acordeon-button Acordeon-button--next" title="Next" onPointerDown={ toggleGrid }>
+    return (
+        <button className="Acordeon-button Acordeon-button--next" title="Next" onPointerDown={toggleGrid}>
             <svg className="Acordeon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                 <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
             </svg>
@@ -130,14 +147,14 @@ const ButtonAccordionNext = () => {
 
 const ButtonAccordionPrev = () => {
 
-    const { grid , setGrid } = useContext(ActiveContext)
+    const { grid, setGrid } = useContext(ActiveContext)
 
     const toggleGrid = () => {
         setGrid(!grid)
     }
 
-    return(
-        <button className="Acordeon-button Acordeon-button--prev" title="Prev" onPointerDown={ toggleGrid }>
+    return (
+        <button className="Acordeon-button Acordeon-button--prev" title="Prev" onPointerDown={toggleGrid}>
             <svg className="Acordeon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                 <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
             </svg>

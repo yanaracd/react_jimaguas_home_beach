@@ -96,32 +96,36 @@ const FormFooter = () => {
 
         const { value: texto } = formInput.current
 
-        const mensaje = { texto }
+        const message = { texto }
 
-        let { VITE_API_URL } = import.meta.env || 'http://localhost:3000'
+        if (message.texto !== '') {
 
-        let options = {
-            method: 'post',
-            body: JSON.stringify(mensaje),
-            headers: {
-                "Content-type": "application/json"
+            let { VITE_API_URL } = import.meta.env || 'http://localhost:3000'
+
+            let options = {
+                method: 'post',
+                body: JSON.stringify(message),
+                headers: {
+                    "Content-type": "application/json"
+                }
             }
+
+            fetch(`${VITE_API_URL}/message`, options)
+                .then(res => res.json())
+                .then(data => {
+                    setMensaje(data)
+                    navigate('/home')
+                })
+
+            formInput.current.value = ''
+
         }
-
-        fetch(`${VITE_API_URL}/message`, options)
-            .then(res => res.json())
-            .then(data => {
-                setMensaje(data)
-                navigate('/home')
-            })
-
-        formInput.current.value = ''
     }
 
     return (
         <>
             <form action="/message/" method="post" className="Footer-form">
-                <input className="Footer-input" type="text" name="contacto" placeholder="Contáctenos" required ref={formInput} />
+                <input className="Footer-input" type="text" name="contacto" placeholder="Contáctenos" ref={formInput} required />
                 <button onPointerDown={sendForm} className="Footer-button" title="Enviar">Enviar</button>
             </form>
             <div>

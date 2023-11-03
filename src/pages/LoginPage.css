@@ -1,4 +1,4 @@
-.Login{
+.Login {
     width: 100vw;
     height: 100vh;
 
@@ -9,26 +9,30 @@
     justify-content: center;
     align-items: center;
 }
-.Login-div{
+
+.Login-div {
     width: 96%;
 
     background-color: white;
 
     border-radius: 1rem;
-    box-shadow: 0 0 1rem 0 rgb(0,0,0,.2);
+    box-shadow: 0 0 1rem 0 rgb(0, 0, 0, .2);
 
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
 }
-.Login-right{
+
+.Login-right {
     width: 50%;
 }
-.Login-img{
+
+.Login-img {
     border-radius: 0 1rem 1rem 0;
 }
-.Login-left{
+
+.Login-left {
     width: 50%;
 
     padding: 0 0 1rem;
@@ -38,22 +42,26 @@
     justify-content: center;
     align-items: center;
 }
-.Login-logo{
+
+.Login-logo {
     width: 20rem;
 }
-.Login-form{
+
+.Login-form {
     width: 18rem;
 }
-.Login-input{
+
+.Login-input {
     width: 100%;
-    
+
     margin: 1rem 0;
     padding: .5rem;
 
     border: 1px solid rgb(211, 211, 211);
     border-radius: .5rem;
 }
-.Login-submit{
+
+.Login-submit {
     background-color: rgb(5, 175, 242);
     color: white;
 
@@ -64,54 +72,67 @@
 
     cursor: pointer;
 }
-.Login-submit--register{
+
+.Login-submit--register {
     margin: .5rem auto;
 }
-.Login-msg{
+
+.Login-msg {
     margin: 0 0 1.5rem;
     color: red;
 }
-.Login-msj{
+
+.Login-msj {
     margin: 0 0 1.5rem;
     color: rgb(86, 89, 2);
 }
-.Login-link{
+
+.Login-link {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     gap: .2rem;
 }
-.Login-navlink{
+
+.Login-navlink {
     color: rgb(5, 175, 242);
     cursor: pointer;
 }
 
-@media (max-width: 72rem){
-    .Login-logo, .Login-form{
+@media (max-width: 72rem) {
+
+    .Login-logo,
+    .Login-form {
         width: 10rem;
     }
-    .Login-submit{
+
+    .Login-submit {
         padding: 0.5rem 1rem;
-    }    
+    }
 }
-@media (max-width: 55rem){
-    .Login-div{
+
+@media (max-width: 55rem) {
+    .Login-div {
         width: auto;
         padding: 2rem;
     }
-    .Login-right{
+
+    .Login-right {
         display: none;
     }
-    .Login-left{
+
+    .Login-left {
         width: 100%;
     }
 }
-@media (max-width: 20rem){
-    .Login{
+
+@media (max-width: 20rem) {
+    .Login {
         padding: 2rem;
     }
-    .Login-link{
+
+    .Login-link {
         flex-direction: column;
     }
 }

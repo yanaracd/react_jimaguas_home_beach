@@ -139,14 +139,14 @@ const TableUpdate = () => {
         let { value: hab } = habInput.current
 
         let nuevo = { _id, entrada, salida, cantidad, hab }
-        
+
         let { VITE_API_URL } = import.meta.env || 'http://localhost:3000'
-        
+
         let options = {
-            method  : 'put',
-            body    : JSON.stringify(nuevo),
-            headers : {
-                "Content-type" : "application/json"
+            method: 'put',
+            body: JSON.stringify(nuevo),
+            headers: {
+                "Content-type": "application/json"
             }
         }
 

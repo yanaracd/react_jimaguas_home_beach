@@ -7,7 +7,7 @@ export const LoginPage = () => {
 
     const { param } = useParams()
 
-    return(
+    return (
         <>
             <div className="Login">
                 <div className="Login-div">
@@ -22,7 +22,7 @@ export const LoginPage = () => {
 }
 
 const LoginImage = () => {
-    return(
+    return (
         <div className="Login-right">
             <img src="assets/auto_playa.jpeg" alt="Coche clásico en la playa" className="Login-img" />
         </div>

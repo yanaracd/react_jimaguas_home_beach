@@ -1,11 +1,12 @@
-.Manager{
+.Manager {
     width: 100%;
 
     position: relative;
 }
-.Manager-wrapper{
+
+.Manager-wrapper {
     width: 100%;
-    
+
     padding: 0 1rem;
     margin: auto;
 
@@ -13,16 +14,19 @@
     top: 2rem;
     left: 0;
 }
-.Manager-h2{
+
+.Manager-h2 {
     margin: 2rem 0 0;
     padding: 2rem 0;
 
     font-family: 'Josefin Sans', sans-serif;
     font-size: 2rem;
 }
-.Manager-update{
+
+.Manager-update {
     display: none;
 }
-.Manager-update.isActive{
+
+.Manager-update.isActive {
     display: table-row;
 }

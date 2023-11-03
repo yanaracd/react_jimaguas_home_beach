@@ -12,10 +12,8 @@ export const Form = () => {
     const habInput = useRef()
 
     useEffect(() => {
-
         const today = new Date();
         setFormattedDate(`${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`)
-
     }, [])
 
     const formSubmit = (e) => {

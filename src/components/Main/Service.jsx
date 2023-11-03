@@ -4,7 +4,7 @@ import { ActiveContext } from './Main'
 
 export const Service = () => {
 
-    const [ servicios, setServicios ] = useState([])
+    const [servicios, setServicios] = useState([])
 
     useEffect(() => {
 
@@ -25,10 +25,10 @@ export const Service = () => {
             <h2 className="Service-h2">Servicios</h2>
             <div className="Service-wrapper">
                 {
-                    servicios.map( servicio =>
-                        <ArticleService 
+                    servicios.map(servicio =>
+                        <ArticleService
                             key={servicio._id}
-                            { ...servicio } />
+                            {...servicio} />
                     )
                 }
             </div>
@@ -36,11 +36,11 @@ export const Service = () => {
     )
 }
 
-const ArticleService = ( props ) => {
+const ArticleService = (props) => {
 
-    const { className , img , button , h3 } = props
+    const { className, img, button, h3 } = props
 
-    const { setLightbox , setCondition } = useContext(ActiveContext)
+    const { setLightbox, setCondition } = useContext(ActiveContext)
 
     // const addLightbox = () => {
     //     setLightbox(true)

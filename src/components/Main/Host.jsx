@@ -37,7 +37,7 @@ export const Host = () => {
 
 const ArticleHost = (props) => {
 
-    const { img , h3 , li } = props
+    const { img, h3, li } = props
 
     return (
         <div className="Host-article">
@@ -52,7 +52,7 @@ const ArticleHost = (props) => {
                         li.map(eachLi =>
                             <LiContact
                                 key={eachLi.id}
-                                { ...eachLi } />
+                                {...eachLi} />
                         )
                     }
                 </ul>
@@ -61,9 +61,9 @@ const ArticleHost = (props) => {
     )
 }
 
-const LiContact = ( props ) => {
+const LiContact = (props) => {
 
-    const { d , enlace } = props
+    const { d, enlace } = props
 
     return (
         <>

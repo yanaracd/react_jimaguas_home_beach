@@ -1,7 +1,7 @@
 import './Location.css'
 
 export const Location = () => {
-    return(
+    return (
         <section className="Main-div Location" id="Ubicacion">
             <h2 className="Location-h2">Ubicacion</h2>
             <IframeLocation />
@@ -10,7 +10,7 @@ export const Location = () => {
 }
 
 const IframeLocation = () => {
-    return(
+    return (
         <div className="Location-wrapper">
             <iframe
                 title="Mapa con la ubicacion del alojamiento"

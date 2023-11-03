@@ -182,7 +182,7 @@ const ArticleDesayuno = (props) => {
             <ul className="Modal-ul">
                 {
                     li.map(eachLi =>
-                        <LiDesayuno 
+                        <LiDesayuno
                             key={eachLi.ide}
                             {...eachLi} />
                     )

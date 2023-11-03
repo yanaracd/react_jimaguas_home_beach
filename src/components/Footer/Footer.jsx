@@ -37,6 +37,7 @@ const LeftFooter = () => {
 const LiFooter = (props) => {
 
     const { href, title, nombre } = props
+    let { VITE_WEB_URL } = import.meta.env || 'http://localhost:5173'
 
     return (
         <li className="Footer-li">

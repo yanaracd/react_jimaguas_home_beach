@@ -102,11 +102,12 @@
     }
 
     .Header-nav.isActive {
-        height: 60vh;
+        height: 65vh;
         opacity: 1;
     }
 
     .Header-ul {
+        margin: 4rem 0 0;
         flex-direction: column;
     }
 

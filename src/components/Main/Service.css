@@ -41,9 +41,9 @@
     transition: opacity .5s ease;
 }
 
-.Service-div:hover .Service-img {
+/* .Service-div:hover .Service-img {
     opacity: 0.8;
-}
+} */
 
 .Service-button {
     opacity: 0;

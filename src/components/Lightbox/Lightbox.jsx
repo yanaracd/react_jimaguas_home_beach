@@ -10,11 +10,12 @@ export const Lightbox = () => {
         <div className={`Main-div Lightbox ${lightbox ? 'isActive' : ''}`}>
             <div className="Lightbox-wrapper">
                 <ButtonLightbox />
-                {
+                <RoomLightbox />
+                {/* {
                     condition === 'habitaciones' ? <RoomLightbox />
                         : condition === 'servicios' && <ServiceLightbox />
 
-                }
+                } */}
             </div>
         </div>
     )

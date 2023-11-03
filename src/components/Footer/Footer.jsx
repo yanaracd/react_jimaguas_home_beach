@@ -40,11 +40,7 @@ const LiFooter = (props) => {
 
     return (
         <li className="Footer-li">
-            {
-                nombre === 'Reservas'
-                    ? <NavLink className="Footer-link" to='booking'>{nombre}</NavLink>
-                    : <a className="Footer-link" href={href} title={title}>{nombre}</a>
-            }
+            <a className="Footer-link" href={`${VITE_WEB_URL}/home${href}`} title={title}>{nombre}</a>
         </li>
     )
 }

@@ -1,6 +1,6 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import './Footer.css'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { AppContext } from '../../App'
 
 export const Footer = () => {
@@ -34,7 +34,7 @@ const LeftFooter = () => {
     )
 }
 
-const LiFooter = ( props ) => {
+const LiFooter = (props) => {
 
     const { href, title, nombre } = props
 
@@ -87,11 +87,49 @@ const RightFooter = () => {
 
 const FormFooter = () => {
 
+    const formInput = useRef()
+    const navigate = useNavigate()
+    const [mensaje, setMensaje] = useState()
+
+    const sendForm = (e) => {
+        e.preventDefault()
+
+        const { value: texto } = formInput.current
+
+        const mensaje = { texto }
+
+        let { VITE_API_URL } = import.meta.env || 'http://localhost:3000'
+
+        let options = {
+            method: 'post',
+            body: JSON.stringify(mensaje),
+            headers: {
+                "Content-type": "application/json"
+            }
+        }
+
+        fetch(`${VITE_API_URL}/message`, options)
+            .then(res => res.json())
+            .then(data => {
+                setMensaje(data)
+                navigate('/home')
+            })
+
+        formInput.current.value = ''
+    }
+
     return (
-        <form action="/message/" method="post" className="Footer-form">
-            <input className="Footer-input" type="text" name="contacto" placeholder="Contáctenos" required />
-            <button className="Footer-button" title="Enviar">Enviar</button>
-        </form>
+        <>
+            <form action="/message/" method="post" className="Footer-form">
+                <input className="Footer-input" type="text" name="contacto" placeholder="Contáctenos" required ref={formInput} />
+                <button onPointerDown={sendForm} className="Footer-button" title="Enviar">Enviar</button>
+            </form>
+            <div>
+                {
+                    mensaje && <span className='Footer-msj'>{mensaje}</span>
+                }
+            </div>
+        </>
     )
 }
 
@@ -107,7 +145,7 @@ const RrssFooter = (props) => {
                     img.src === ''
                         ? <svg className="Footer-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                             <path d={d} />
-                          </svg>
+                        </svg>
                         : <img loading="lazy" className="Footer-svg" src={img.src} alt={img.alt} />
                 }
             </a>

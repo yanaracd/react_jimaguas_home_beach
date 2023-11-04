@@ -1,5 +1,5 @@
 # Jimaguas Home Beach
-![Imagen del proyecto](https://github.com/yanaracd/jimaguas_home_beach/blob/main/assets/img_project/home_project.jpg)
+![Imagen del proyecto](https://github.com/yanaracd/react_jimaguas_home_beach/blob/main/public/assets/FireShot%20Capture%20003%20-%20Jimaguas%20Home%20Beach%20-%20jimaguashomebeach.netlify.app.png)
 
 ## Ejemplo en vivo
 - [URL Jimaguas Home Beach](https://jimaguashomebeach.netlify.app/)
@@ -20,7 +20,7 @@ Una vez culminado el módulo y ya con todas las herramientas necesarias, me he d
 ## Vista previa del proyecto
 Si quieres hechas un vistazo al proyecto, te recomiendo:
 
-![Captura del proyecto](https://github.com/yanaracd/jimaguas_home_beach/blob/main/assets/img_project/page_project.jpg)
+![Captura del proyecto](https://github.com/yanaracd/react_jimaguas_home_beach/blob/main/public/assets/FireShot%20Capture%20002%20-%20Jimaguas%20Home%20Beach%20-%20jimaguashomebeach.netlify.app.png)
 
 ## Autor ✒️
 **Yanara Caballero Delgado**

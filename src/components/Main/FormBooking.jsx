@@ -53,11 +53,11 @@ export const Form = () => {
             <ul className="Home-reserva">
                 <li className="Home-fecha">
                     <label className="Home-label">Llegada</label>
-                    <input className="Home-input" id="llegada" type="date" min={formattedDate} max="2025-12-31" required ref={entradaInput} />
+                    <input className="Home-input" id="llegada" type="date" min={formattedDate} max="2025-12-31" required ref={entradaInput} placeholder="dd/mm/aaaa" />
                 </li>
                 <li className="Home-fecha">
                     <label className="Home-label">Salida</label>
-                    <input className="Home-input" id="salida" type="date" min={formattedDate} max="2025-12-31" required ref={salidaInput} />
+                    <input className="Home-input" id="salida" type="date" min={formattedDate} max="2025-12-31" required ref={salidaInput} placeholder="dd/mm/aaaa" />
                 </li>
             </ul>
             <h3 className="Home-h3">Selecione la cantidad de huéspedes</h3>
